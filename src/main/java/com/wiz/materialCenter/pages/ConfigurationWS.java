@@ -126,7 +126,7 @@ public class ConfigurationWS extends TestBase {
 	
 	/*Xpaths for import excel file*/
 	
-	@FindBy(xpath = "//label[text()=' Fixed']")
+	@FindBy(xpath = "//label[text()=' Fixed'] | //input[@value='excelFixed']")
 	WebElement fixedFormat;
 	
 	@FindBy(xpath = "(//img[contains(@id,'ImportFromExcel')])[1]")
@@ -135,7 +135,7 @@ public class ConfigurationWS extends TestBase {
 	@FindBy(xpath = "(//img[contains(@id,'ImportFromExcel')])[2]")
 	WebElement schemaDropDown;
 	
-	@FindBy(xpath = "//div[@id='RecentObjSel']/table/tbody/tr/td/span[text()='/Data']")
+	@FindBy(xpath = "//div[@id='RecentObjSel']/table/tbody/tr/td/span[text()='/Data'] | //div[@id='RecentObjSel']/table/tbody/tr/td/span[text()='/Data/Active/TASE']")
 	WebElement dataProject;
 	
 	@FindBy(xpath = "//table[@class='RecentObjSelTbl']/tbody/tr/td/span[text()='MasterMetals']")
