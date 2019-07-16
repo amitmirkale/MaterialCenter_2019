@@ -147,12 +147,6 @@ public class PlotProcessInput extends TestBase{
         } else {
             System.out.println("Image displayed.");
         }*/
-		/* action.click(plotResult).build().perform();
-		 if(plotResult.isDisplayed()) {
-			System.out.println("Plotting is done");
-		} else {
-			System.out.println("Plotting is not done");
-		}*/
 	}
 
 }
