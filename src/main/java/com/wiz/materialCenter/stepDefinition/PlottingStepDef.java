@@ -82,5 +82,10 @@ public class PlottingStepDef extends TestBase {
 	public void select_four_params_as_Y_values() {
 	    plotProcessInput.spiderPlotYValuesFord();
 	}
+	
+	@When("select test temperature from filters")
+	public void select_test_temperature_from_filters() {
+	    plotProcessInput.selectFilter();
+	}
 
 }

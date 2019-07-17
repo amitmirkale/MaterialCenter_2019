@@ -166,6 +166,10 @@ public class SearchPage extends TestBase {
 		textSearch(prop.getProperty("textsearch1"));
 	}
 	
+	public void enterTestDataMat() {
+		textSearch(prop.getProperty("testDataMaterial"));
+	}
+	
 	public void enterTestDataSearch() {
 		textSearch(prop.getProperty("testdataSearch"));
 	}

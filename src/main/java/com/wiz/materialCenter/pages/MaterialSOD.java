@@ -1,6 +1,7 @@
 package com.wiz.materialCenter.pages;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -35,6 +36,9 @@ public class MaterialSOD extends TestBase {
 	@FindBy(xpath = "//a[text()='Export To Excel']")
 	WebElement exportExcelOption;
 	
+	@FindBy(xpath = "(//a[text()='Export To Excel'])[2]")
+	WebElement exportTestDataExcel;
+	
 	@FindBy(xpath = "//input[contains(@id,'ExportToCustomExcel') and @title='Submit']")
 	WebElement exportExcelSubmit;
 	
@@ -55,6 +59,24 @@ public class MaterialSOD extends TestBase {
 	
 	@FindBy(xpath = "//span[text()='Classification']")
 	WebElement classificationTag;
+	
+	@FindBy(xpath = "//span[text()='Test Data']")
+	WebElement testDataTab;
+	
+	@FindBy(xpath = "//table[@class='ModBody']/tbody/tr[@smrow='0']")
+	WebElement firstTestData;
+	
+	@FindBy(xpath = "//table[@class='ModBody']/tbody/tr[@smrow='6']")
+	WebElement lastTestData;
+	
+	@FindBy(xpath = "//span[text()='Mapping']")
+	WebElement mappingTab;
+	
+	@FindBy(xpath = "//div[contains(@id,'schemaMapping')]/img")
+	WebElement schemaMappingDropDown;
+	
+	@FindBy(xpath = "//span[text()='FMD Migration Test Data']")
+	WebElement fmdschemaMapping;
 	
 	/*Actions to be performed under Create section*/
 	
@@ -179,6 +201,10 @@ public class MaterialSOD extends TestBase {
 		js.executeScript("arguments[0].click();", editMatOption);
 	}
 	
+	public void clickOnMappingTab() {
+		action.click(mappingTab).build().perform();
+	}
+	
 	public void clickOnExportExcel() {
 		js.executeScript("arguments[0].click();", exportExcelOption);
 	}
@@ -191,6 +217,20 @@ public class MaterialSOD extends TestBase {
 		js.executeScript("arguments[0].click();", propertySetFilter);
 		action.click(selectAllCheckbox).build().perform();
 		action.click(filterOkButton).build().perform();
+	}
+	
+	public void selectTestData() {
+		action.click(testDataTab).build().perform();
+		action.keyDown(Keys.SHIFT).click(firstTestData).click(lastTestData).keyUp(Keys.SHIFT).build().perform();
+	}
+	
+	public void selectExportTestDataExcel() {
+		action.click(exportTestDataExcel).build().perform();
+	}
+	
+	public void selectSchemaMapping() {
+		action.click(schemaMappingDropDown).build().perform();
+		action.click(fmdschemaMapping).build().perform();
 	}
 	
 	public void verifyNoPropMsg() {

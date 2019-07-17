@@ -2,6 +2,7 @@ package com.wiz.materialCenter.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -58,6 +59,9 @@ public class PlotProcessInput extends TestBase{
 	@FindBy(xpath = "//select[@id='ySel']/option[text()='Density']")
 	WebElement yValueDensity;
 	
+	@FindBy(xpath = "//option[text()='[68.0 : 572] °F'] | //option[text()='572 °F']")
+	WebElement tempFilter;
+	
 	/*Plot page buttons xpath coverages*/
 	
 	@FindBy(xpath = "//input[@value='Plot']")
@@ -75,20 +79,23 @@ public class PlotProcessInput extends TestBase{
 	}
 	
 	public void clickOnBarChartType() {
-		action.click(barChartType).build().perform();
-		//js.executeScript("arguments[0].click();", barChartType);
+		action.moveToElement(barChartType).build().perform();
+		action.sendKeys(Keys.ENTER).click(barChartType).build().perform();
 	}
 	
 	public void selectPieChart() {
-		action.click(pieChartPlot).build().perform();
+		action.moveToElement(pieChartPlot).build().perform();
+		action.sendKeys(Keys.ENTER).click(pieChartPlot).build().perform();
 	}
 	
 	public void clickOnScatterPlot() {
-		action.click(scatterPlot).build().perform();
+		action.moveToElement(scatterPlot).build().perform();
+		action.sendKeys(Keys.ENTER).click(scatterPlot).build().perform();
 	}
 	
 	public void clickOnSpiderPlot() {
-		action.click(spiderPlot).build().perform();
+		action.moveToElement(spiderPlot).build().perform();
+		action.sendKeys(Keys.ENTER).click(spiderPlot).build().perform();
 	}
 	
 	public void clickOnXValuesDropDown() {
@@ -124,6 +131,10 @@ public class PlotProcessInput extends TestBase{
 		select.selectByValue("9");
 		select.selectByValue("10");
 		select.selectByValue("11");
+	}
+	
+	public void selectFilter() {
+		action.click(tempFilter).build().perform();
 	}
 	
 	public void spiderPlotYValues() {
