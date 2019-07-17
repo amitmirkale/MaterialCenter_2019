@@ -80,7 +80,7 @@ public class PlottingStepDef extends TestBase {
 
 	@When("select four params as Y values")
 	public void select_four_params_as_Y_values() {
-	    plotProcessInput.spiderPlotYValues();
+	    plotProcessInput.spiderPlotYValuesFord();
 	}
 
 }

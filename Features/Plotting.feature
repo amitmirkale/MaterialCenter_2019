@@ -114,3 +114,52 @@ And select plot type as Spider plot
 And select four params as Y values
 And click on plot button
 Then plot should be done successfully
+
+@TestDataBarChartFord
+Scenario: Plot the bar chart graph of test data
+Given user selects test data type from search dropdown
+When user gives search input in search field
+And click on arrow button
+And click on select page option
+And click on plot action
+And select plot type as Bar chart
+And select multiple Y values
+And click on plot button
+Then plot should be done successfully
+
+@TestDataPieChartFord
+Scenario: Plot the pie chart graph of test data
+Given user selects test data type from search dropdown
+When user gives search input in search field
+And click on arrow button
+And click on select page option
+And click on plot action
+And select plot type as Pie chart
+And select Density as Y values
+And click on plot button
+Then plot should be done successfully
+
+@TestDataScatterPlotFord
+Scenario: Plot the scatter graph of density vs ultimate strength of test data
+Given user selects test data type from search dropdown
+When user gives search input in search field
+And click on arrow button
+And click on select page option
+And click on plot action
+And select plot type as Scatter plot
+And select Density as X values
+And select Ultimate Strength as Y values
+And click on plot button
+Then plot should be done successfully
+
+@TestDataSpiderPlotFord
+Scenario: Plot the spider graph with four params selected of test data
+Given user selects test data type from search dropdown
+When user gives search input in search field
+And click on arrow button
+And click on select page option
+And click on plot action
+And select plot type as Spider plot
+And select four params as Y values
+And click on plot button
+Then plot should be done successfully

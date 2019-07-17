@@ -52,7 +52,7 @@ public class PlotProcessInput extends TestBase{
 	@FindBy(xpath = "//select[@id='ySel']")
 	WebElement yValues;
 	
-	@FindBy(xpath = "//select[@id='ySel']/option[text()='Ultimate Strength'] | //select[@id='ySel']/option[text()='Ultimate Tensile Strength'] | //select[@id='ySel']/option[contains(text(),'Shear Ultimate Strength')]")
+	@FindBy(xpath = "//select[@id='ySel']/option[text()='Maximum Short-Term Material Temperature'] | //select[@id='ySel']/option[text()='Ultimate Strength'] | //select[@id='ySel']/option[text()='Ultimate Tensile Strength'] | //select[@id='ySel']/option[contains(text(),'Shear Ultimate Strength')]")
 	WebElement yValueUltimateStrength;
 	
 	@FindBy(xpath = "//select[@id='ySel']/option[text()='Density']")
@@ -132,6 +132,14 @@ public class PlotProcessInput extends TestBase{
 		select.selectByValue("15");
 		select.selectByValue("17");
 		select.selectByValue("19");
+	}
+	
+	public void spiderPlotYValuesFord() {
+		Select select = new Select(yValues);
+		select.selectByValue("0");
+		select.selectByValue("1");
+		select.selectByValue("2");
+		select.selectByValue("3");
 	}
 	
 	public void clickOnPlotButton() {
