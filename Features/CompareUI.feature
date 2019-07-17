@@ -37,3 +37,8 @@ And click on property set and uncheck select all checkbox
 And no property set selected msg is displayed
 And click on property set and check select all checkbox
 Then all property set of material is displayed
+
+@ConfigNav
+Scenario: After login user navigates to config tab
+Given user is on dashboard page
+Then user clicks on configuration tab

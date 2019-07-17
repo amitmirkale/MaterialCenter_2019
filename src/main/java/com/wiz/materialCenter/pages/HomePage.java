@@ -49,6 +49,11 @@ public class HomePage extends TestBase {
 	@FindBy(xpath = "//table[@title='Search']")
 	WebElement search;
 	
+	@FindBy(xpath = "//span[text()='Clipboard' and contains(@id,'HomeWorkspace')]")
+	WebElement clipboardText;
+	
+	@FindBy(xpath = "//span[text()='Materials Data Owner']")
+	WebElement configConfirm;
 	
 	/*Processes tabs*/
 	
@@ -88,6 +93,11 @@ public class HomePage extends TestBase {
 	public void clickOnConfiguration() {
 		action.moveToElement(config).build().perform();
 		config.click();
+		if(configConfirm.isDisplayed()) {
+			System.out.println("User is on Configuration page");
+		} else {
+			System.out.println("User didn't reach Configuration page");
+		}
 	}
 	
 	public void clickOnAdministration() {
@@ -126,6 +136,14 @@ public class HomePage extends TestBase {
 		} else {
 			System.out.println("CAE discard process is not done successfully");
 		}
+	}
+	
+	public void verifyClipboard() {
+		if(clipboardText.isDisplayed()) {
+			System.out.println("User is on HomePage");
+		} else {
+			System.out.println("User didn't reach HomePage");
+		} 
 	}
 
 }

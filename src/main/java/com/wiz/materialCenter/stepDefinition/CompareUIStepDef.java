@@ -1,10 +1,12 @@
 package com.wiz.materialCenter.stepDefinition;
 
 import com.wiz.materialCenter.pages.CompareProcessPage;
+import com.wiz.materialCenter.pages.HomePage;
 import com.wiz.materialCenter.pages.MaterialMOD;
 import com.wiz.materialCenter.pages.MaterialSOD;
 import com.wiz.materialCenter.util.TestBase;
 
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -12,6 +14,7 @@ public class CompareUIStepDef extends TestBase {
 	MaterialMOD matMod = new MaterialMOD();
 	CompareProcessPage compare = new CompareProcessPage();
 	MaterialSOD matSod = new MaterialSOD();
+	HomePage homePage = new HomePage();
 	
 	@When("select four materials")
 	public void select_four_materials() {
@@ -52,6 +55,16 @@ public class CompareUIStepDef extends TestBase {
 	@Then("all property set of material is displayed")
 	public void all_property_set_of_material_is_displayed() {
 		matSod.verifyPropSetDisplay();
+	}
+	
+	@Given("user is on dashboard page")
+	public void user_is_on_dashboard_page() {
+	    homePage.verifyClipboard();
+	}
+
+	@Then("user clicks on configuration tab")
+	public void user_clicks_on_configuration_tab() {
+	    homePage.clickOnConfiguration();
 	}
 
 }
