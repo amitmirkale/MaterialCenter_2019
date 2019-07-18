@@ -50,6 +50,18 @@ And click on collapse thumbnail of curve
 And click on expand thumbnail of curve
 Then click on curve to open curve applet
 
+@Compare50RevMatFord
+Scenario: User compares the 50 revisions of material
+Given user clicks on Config WS
+When user comes on Navigate WS
+And click on material design data
+And sort the material in descending order of revisions
+And select the material with max revisions
+And go to revisions tab of material
+And select fifty materials
+And right click on revisions to select compare option
+Then compare results displayed
+
 @ConfigNav
 Scenario: After login user navigates to config tab
 Given user is on dashboard page

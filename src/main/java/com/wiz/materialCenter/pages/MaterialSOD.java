@@ -13,6 +13,7 @@ public class MaterialSOD extends TestBase {
 	
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Actions action = new Actions(driver);
+	MaterialMOD matmod = new MaterialMOD();
 	
 	public MaterialSOD() {
 		PageFactory.initElements(driver, this);
@@ -75,6 +76,9 @@ public class MaterialSOD extends TestBase {
 	@FindBy(xpath = "//table[@class='ModBody']/tbody/tr[@smrow='6']")
 	WebElement lastTestData;
 	
+	@FindBy(xpath = "//table[@class='ModBody']/tbody/tr[@smrow='49']")
+	WebElement fiftyEle;
+	
 	@FindBy(xpath = "//span[text()='Mapping']")
 	WebElement mappingTab;
 	
@@ -95,6 +99,9 @@ public class MaterialSOD extends TestBase {
 	
 	@FindBy(xpath = "//div[@class='CarPlotArea']")
 	WebElement curveApplet;
+	
+	@FindBy(xpath = "//span[text()='Revisions']")
+	WebElement revisionsTab;
 	
 	/*Actions to be performed under Create section*/
 	
@@ -251,6 +258,10 @@ public class MaterialSOD extends TestBase {
 		action.click(importExcelSubmit).build().perform();
 	}
 	
+	public void clickOnRevisionsTab() {
+		action.click(revisionsTab).build().perform();
+	}
+	
 	public void selectImportTestData() {
 		action.click(toolstab).build().perform();
 		action.click(importTestData).build().perform();
@@ -265,6 +276,15 @@ public class MaterialSOD extends TestBase {
 	public void selectTestData() {
 		action.click(testDataTab).build().perform();
 		action.keyDown(Keys.SHIFT).click(firstTestData).click(lastTestData).keyUp(Keys.SHIFT).build().perform();
+	}
+	
+	public void selectMatRevisions() {
+		action.keyDown(Keys.SHIFT).click(firstTestData).click(fiftyEle).keyUp(Keys.SHIFT).build().perform();
+	}
+	
+	public void performComapreAction() {
+		matmod.rightClickOnMats();
+		matmod.clickOnCompare();
 	}
 	
 	public void selectExportTestDataExcel() {

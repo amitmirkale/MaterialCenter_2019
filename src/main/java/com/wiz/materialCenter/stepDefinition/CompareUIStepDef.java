@@ -86,5 +86,20 @@ public class CompareUIStepDef extends TestBase {
 	public void click_on_curve_to_open_curve_applet() {
 	    matSod.openCurveApplet();
 	}
+	
+	@When("go to revisions tab of material")
+	public void go_to_revisions_tab_of_material() {
+	    matSod.clickOnRevisionsTab();
+	}
+
+	@When("select fifty materials")
+	public void select_fifty_materials() {
+	    matSod.selectMatRevisions();
+	}
+	
+	@When("right click on revisions to select compare option")
+	public void right_click_on_revisions_to_select_compare_option() {
+	    matSod.performComapreAction();
+	}
 
 }
