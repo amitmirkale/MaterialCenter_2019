@@ -2,6 +2,7 @@ package com.wiz.materialCenter.pages;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -10,6 +11,7 @@ import com.wiz.materialCenter.util.TestBase;
 public class ProcessesPage extends TestBase{
 	
 	JavascriptExecutor js = (JavascriptExecutor) driver;
+	Actions action = new Actions(driver);
 	
 	public ProcessesPage() {
 		PageFactory.initElements(driver, this);
@@ -32,6 +34,9 @@ public class ProcessesPage extends TestBase{
 	
 	@FindBy(xpath = "(//input[@value='Submit'])[1]")
 	WebElement discardSubmit;
+	
+	@FindBy(xpath = "//input[@type='checkbox']")
+	WebElement autoRefreshCheckbox;
 	
 	@FindBy(xpath = "(//span[text()='Done'])[1]")
 	WebElement doneStatus;
@@ -71,6 +76,17 @@ public class ProcessesPage extends TestBase{
 			System.out.println("Delete process is completed");
 		} else { 
 			System.out.println("Delete process is not completed");
+		}
+	}
+	
+	public void verifyProcessStatus() {
+		if(autoRefreshCheckbox.isEnabled()) {
+			action.click(autoRefreshCheckbox).build().perform();
+				if(doneStatus.isDisplayed()) {
+					System.out.println("Process is completed");
+				}
+		} else {
+			System.out.println("Process is not completed");
 		}
 	}
 

@@ -93,4 +93,9 @@ public class ExportImportExcelStepDef extends TestBase {
 		homePage.clickOnProcessViewAll();
 		homePage.clickOnDemoteProcess();	// selecting first process 
 	}
+	
+	@When("check that process status is completed")
+	public void check_that_process_status_is_completed() {
+	    process.verifyProcessStatus();
+	}
 }

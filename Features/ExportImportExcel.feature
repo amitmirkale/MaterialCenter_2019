@@ -38,8 +38,7 @@ And click on export to excel test data
 And click on mapping tab
 And select schema mapping from dropdown
 And click on submit button on export to excel popup
-And navigate to homepage and select first process
-Then check that process is completed
+Then check that process status is completed
 
 @ImportExcelFord
 Scenario: User uploads material using import excel file link
