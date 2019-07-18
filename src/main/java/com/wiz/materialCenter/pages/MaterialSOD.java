@@ -33,6 +33,9 @@ public class MaterialSOD extends TestBase {
 	@FindBy(xpath = "//table[contains(@id,'MenuBar')]/tbody/tr/td/div/span[text()='Security']")
 	WebElement security;
 	
+	@FindBy(xpath = "//span[text()='Tools']")
+	WebElement toolstab;
+	
 	@FindBy(xpath = "//a[text()='Export To Excel']")
 	WebElement exportExcelOption;
 	
@@ -41,6 +44,9 @@ public class MaterialSOD extends TestBase {
 	
 	@FindBy(xpath = "//input[contains(@id,'ExportToCustomExcel') and @title='Submit']")
 	WebElement exportExcelSubmit;
+	
+	@FindBy(xpath = "//input[contains(@id,'Import') and @title='Submit']")
+	WebElement importExcelSubmit;
 	
 	@FindBy(xpath = "//a[text()='Edit Material']")
 	WebElement editMatOption;
@@ -121,6 +127,22 @@ public class MaterialSOD extends TestBase {
 	@FindBy(xpath = "//div[@id='maindiv']/table/tbody/tr/td[text()='Assign Security Labels']")
 	WebElement assignSecurityLabels;
 	
+	/*Actions to be performed under tools section*/
+	
+	@FindBy(xpath = "//td[text()='Fix Invalid File Based Attributes Properties SimProcess']")
+	WebElement fixAttributes;
+	
+	@FindBy(xpath = "//td[text()='Import Design Data']")
+	WebElement importDesignData;
+	
+	@FindBy(xpath = "//td[text()='Import Test Data']")
+	WebElement importTestData;
+	
+	@FindBy(xpath = "//td[text()='Pedigree Viewer']")
+	WebElement pedigreeViewer;
+	
+	@FindBy(xpath = "//td[text()='Send Email']")
+	WebElement sendEmail;
 	
 	/*CAE AUTO model result xpaths */
 	
@@ -211,6 +233,15 @@ public class MaterialSOD extends TestBase {
 	
 	public void exportExcelSubmit() {
 		js.executeScript("arguments[0].click();", exportExcelSubmit);
+	}
+	
+	public void importTestDataSubmit() {
+		action.click(importExcelSubmit).build().perform();
+	}
+	
+	public void selectImportTestData() {
+		action.click(toolstab).build().perform();
+		action.click(importTestData).build().perform();
 	}
 	
 	public void propSetSelect() {

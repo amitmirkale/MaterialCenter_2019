@@ -98,4 +98,19 @@ public class ExportImportExcelStepDef extends TestBase {
 	public void check_that_process_status_is_completed() {
 	    process.verifyProcessStatus();
 	}
+	
+	@When("click on tools tab and import test data")
+	public void click_on_tools_tab_and_import_test_data() {
+	    matSod.selectImportTestData();
+	}
+
+	@When("choose the file from system to import")
+	public void choose_the_file_from_system_to_import() {
+	    config.selectTestDataToUplaod();
+	}
+
+	@When("click on submit button of import test data popup")
+	public void click_on_submit_button_of_import_test_data_popup() {
+	    matSod.importTestDataSubmit();
+	}
 }

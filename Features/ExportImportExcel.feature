@@ -29,7 +29,7 @@ And click on submit button on export to excel popup
 Then export to excel is done successfully
 
 @ExportTestDataMatFord
-Scenario: User export the material into excel
+Scenario: User export the material test data into excel
 Given user gives test data material to search
 When sort the material in descending order of revisions
 And select the material with max revisions
@@ -38,6 +38,16 @@ And click on export to excel test data
 And click on mapping tab
 And select schema mapping from dropdown
 And click on submit button on export to excel popup
+Then check that process status is completed
+
+@ImportTestDataMatFord
+Scenario: User import the material test data
+Given user gives test data material to search
+When sort the material in descending order of revisions
+And select the material with max revisions
+And click on tools tab and import test data
+And choose the file from system to import
+And click on submit button of import test data popup
 Then check that process status is completed
 
 @ImportExcelFord

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.wiz.materialCenter.util.TestBase;
 
@@ -12,6 +14,7 @@ public class ProcessesPage extends TestBase{
 	
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Actions action = new Actions(driver);
+	WebDriverWait wait = new WebDriverWait(driver, 30);
 	
 	public ProcessesPage() {
 		PageFactory.initElements(driver, this);
@@ -82,6 +85,7 @@ public class ProcessesPage extends TestBase{
 	public void verifyProcessStatus() {
 		if(autoRefreshCheckbox.isEnabled()) {
 			action.click(autoRefreshCheckbox).build().perform();
+			wait.until(ExpectedConditions.elementToBeClickable(doneStatus));
 				if(doneStatus.isDisplayed()) {
 					System.out.println("Process is completed");
 				}

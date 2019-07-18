@@ -183,6 +183,15 @@ public class ConfigurationWS extends TestBase {
 		}
 	}
 	
+	public void selectTestDataToUplaod() {
+		uploadExcel(prop.getProperty("testDataPath"));
+		if(removeExcelButton.isDisplayed()) {
+			System.out.println("File to upload is selected");
+		} else { 
+			System.out.println("File to upload is not yet selected");
+		}
+	}
+	
 	public void clickOnSubmitExcel() {
 		js.executeScript("arguments[0].click();", submitExcelButton);
 	}
