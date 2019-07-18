@@ -51,7 +51,7 @@ And click on expand thumbnail of curve
 Then click on curve to open curve applet
 
 @Compare50RevMatFord
-Scenario: User compares the 50 revisions of material
+Scenario: User compares the fifty revisions of material
 Given user clicks on Config WS
 When user comes on Navigate WS
 And click on material design data
