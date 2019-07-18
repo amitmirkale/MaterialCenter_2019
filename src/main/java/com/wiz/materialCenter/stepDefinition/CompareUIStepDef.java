@@ -66,5 +66,20 @@ public class CompareUIStepDef extends TestBase {
 	public void user_clicks_on_configuration_tab() {
 	    homePage.clickOnConfiguration();
 	}
+	
+	@When("verify that material SOD is open")
+	public void verify_that_material_SOD_is_open() {
+		matSod.verifyPropSetDisplay();
+	}
+	
+	@When("click on collapse thumbnail of curve")
+	public void click_on_collapse_thumbnail_of_curve() {
+	    matSod.selectCollapseCurve();
+	}
+
+	@Then("click on expand thumbnail of curve")
+	public void click_on_expand_thumbnail_of_curve() {
+	    matSod.selectExpandCurve();
+	}
 
 }

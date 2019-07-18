@@ -38,6 +38,17 @@ And no property set selected msg is displayed
 And click on property set and check select all checkbox
 Then all property set of material is displayed
 
+@ExpandCollapseCurve
+Scenario: User expands and collapse the curve thumbnail
+Given user clicks on Config WS
+When user comes on Navigate WS
+And click on material design data
+And sort the material in descending order of revisions
+And select the material with max revisions
+And verify that material SOD is open
+And click on collapse thumbnail of curve
+Then click on expand thumbnail of curve
+
 @ConfigNav
 Scenario: After login user navigates to config tab
 Given user is on dashboard page

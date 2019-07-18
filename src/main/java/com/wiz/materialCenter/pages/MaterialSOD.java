@@ -84,6 +84,15 @@ public class MaterialSOD extends TestBase {
 	@FindBy(xpath = "//span[text()='FMD Migration Test Data']")
 	WebElement fmdschemaMapping;
 	
+	@FindBy(xpath = "(//img[@title='Collapse Thumbnail'])[1]")
+	WebElement collapseButton;
+	
+	@FindBy(xpath = "(//img[@title='Expand Thumbnail'])[1]")
+	WebElement expandButton;
+	
+	@FindBy(xpath = "(//img[contains(@id,'Mechanical_Curves_Table_value_0')])[1]")
+	WebElement verifyCollapseExpand;
+	
 	/*Actions to be performed under Create section*/
 	
 	@FindBy(xpath = "//div[@id='maindiv']/table/tbody/tr/td[text()='Material']")
@@ -277,6 +286,25 @@ public class MaterialSOD extends TestBase {
 			System.out.println("Property set filter applied successfully");
 		} else {
 			System.out.println("Property set filter not applied successfully");
+		}
+	}
+	
+	public void selectCollapseCurve() {
+		js.executeScript("arguments[0].scrollIntoView(true);", collapseButton);
+		action.click(collapseButton).build().perform();
+		if(verifyCollapseExpand.isDisplayed()) {
+			System.out.println("Curve has been collapsed successfully");
+		} else {
+			System.out.println("Curve didn't collapse");
+		}
+	}
+	
+	public void selectExpandCurve() {
+		action.click(expandButton).build().perform();
+		if(verifyCollapseExpand.isDisplayed()) {
+			System.out.println("Curve has been expanded successfully");
+		} else {
+			System.out.println("Curve didn't expand");
 		}
 	}
 
