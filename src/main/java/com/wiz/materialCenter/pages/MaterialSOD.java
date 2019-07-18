@@ -93,6 +93,9 @@ public class MaterialSOD extends TestBase {
 	@FindBy(xpath = "(//img[contains(@id,'Mechanical_Curves_Table_value_0')])[1]")
 	WebElement verifyCollapseExpand;
 	
+	@FindBy(xpath = "//div[@class='CarPlotArea']")
+	WebElement curveApplet;
+	
 	/*Actions to be performed under Create section*/
 	
 	@FindBy(xpath = "//div[@id='maindiv']/table/tbody/tr/td[text()='Material']")
@@ -305,6 +308,15 @@ public class MaterialSOD extends TestBase {
 			System.out.println("Curve has been expanded successfully");
 		} else {
 			System.out.println("Curve didn't expand");
+		}
+	}
+	
+	public void openCurveApplet() {
+		action.click(verifyCollapseExpand).build().perform();
+		if(curveApplet.isDisplayed()) {
+			System.out.println("Curve applet is opened successfully");
+		} else {
+			System.out.println("Curve applet didn't open");
 		}
 	}
 

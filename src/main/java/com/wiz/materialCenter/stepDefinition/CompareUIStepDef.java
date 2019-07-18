@@ -77,9 +77,14 @@ public class CompareUIStepDef extends TestBase {
 	    matSod.selectCollapseCurve();
 	}
 
-	@Then("click on expand thumbnail of curve")
+	@When("click on expand thumbnail of curve")
 	public void click_on_expand_thumbnail_of_curve() {
 	    matSod.selectExpandCurve();
+	}
+	
+	@Then("click on curve to open curve applet")
+	public void click_on_curve_to_open_curve_applet() {
+	    matSod.openCurveApplet();
 	}
 
 }

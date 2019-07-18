@@ -47,7 +47,8 @@ And sort the material in descending order of revisions
 And select the material with max revisions
 And verify that material SOD is open
 And click on collapse thumbnail of curve
-Then click on expand thumbnail of curve
+And click on expand thumbnail of curve
+Then click on curve to open curve applet
 
 @ConfigNav
 Scenario: After login user navigates to config tab
