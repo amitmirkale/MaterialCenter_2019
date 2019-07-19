@@ -59,7 +59,7 @@ public class PlotProcessInput extends TestBase{
 	@FindBy(xpath = "//select[@id='ySel']/option[text()='Density']")
 	WebElement yValueDensity;
 	
-	@FindBy(xpath = "//option[text()='[68.0 : 572] °F'] | //option[text()='572 °F']")
+	@FindBy(xpath = "//option[text()='[68.0 : 572] °F'] | //option[text()='572 °F'] | //option[text()='300 °C']")
 	WebElement tempFilter;
 	
 	/*Plot page buttons xpath coverages*/

@@ -107,6 +107,7 @@ public class ExportImportExcelStepDef extends TestBase {
 	@When("choose the file from system to import")
 	public void choose_the_file_from_system_to_import() {
 	    config.selectTestDataToUplaod();
+	    matSod.selectTestTemplate();
 	}
 
 	@When("click on submit button of import test data popup")

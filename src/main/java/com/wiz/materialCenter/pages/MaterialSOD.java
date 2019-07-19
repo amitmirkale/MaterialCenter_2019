@@ -103,6 +103,10 @@ public class MaterialSOD extends TestBase {
 	@FindBy(xpath = "//span[text()='Revisions']")
 	WebElement revisionsTab;
 	
+	@FindBy(xpath = "//img[contains(@id,'testTemplate')]")
+	WebElement testTemplateDropDown;
+	
+	
 	/*Actions to be performed under Create section*/
 	
 	@FindBy(xpath = "//div[@id='maindiv']/table/tbody/tr/td[text()='Material']")
@@ -293,6 +297,11 @@ public class MaterialSOD extends TestBase {
 	
 	public void selectSchemaMapping() {
 		action.click(schemaMappingDropDown).build().perform();
+		action.click(fmdschemaMapping).build().perform();
+	}
+	
+	public void selectTestTemplate() {
+		action.click(testTemplateDropDown).build().perform();
 		action.click(fmdschemaMapping).build().perform();
 	}
 	
